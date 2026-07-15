@@ -3,6 +3,15 @@
 import { loginData } from '../test-data/loginData';
 import {test , expect } from '../fixtures/baseFixture.js';
 
+test('Login page verification' , async({page , loginPage}) => {
+    await loginPage.goto();
+    await expect(loginPage.logoImage).toBeVisible();
+    await expect(loginPage.usernameLabel).toBeVisible();
+    await expect(loginPage.passwordLabel).toBeVisible();
+    await expect(loginPage.submit).toBeEnabled();
+
+});
+
 test('Valid Login' , async({page , loginPage , gotoPage}) => {
 
     await loginPage.login(loginData.validUser.username , loginData.validUser.password);
@@ -11,21 +20,28 @@ test('Valid Login' , async({page , loginPage , gotoPage}) => {
 
 });
 
-test('Invalid Login' , async({page , loginPage , gotoPage}) => {
+test('Should display error message for invalid credentials' , async({page , loginPage , gotoPage}) => {
 
     await loginPage.login(loginData.invalidUser.username , loginData.invalidUser.password);
-    await expect(page.getByText('Invalid credentials')).toHaveText('Invalid credentials');
+    await expect(loginPage.invalidCredError).toHaveText('Invalid credentials');
 });
 
-test('Null Username' , async({page ,loginPage , gotoPage})=> {
-    await loginPage.login(' ' , loginData.validUser.password);
-    await expect(page.locator('.oxd-input-field-error-message')).toContainText('Required');
+test('Should display validation message when username is empty' , async({page ,loginPage , gotoPage})=> {
+    await loginPage.login('' , loginData.validUser.password);
+    await expect(loginPage.blankFieldError).toContainText('Required');
 
 });
 
-test('Null Password' , async({page , loginPage , gotoPage})=> {
-    await loginPage.login(loginData.validUser.username , ' ');
-    await expect(page.locator('.oxd-input-field-error-message')).toContainText('Required');
+test('Should display validation message when password is empty' , async({page , loginPage , gotoPage})=> {
+    await loginPage.login(loginData.validUser.username , '');
+    await expect(loginPage.blankFieldError).toContainText('Required');
+
+});
+
+test('Logout' , async({page, loginPage, loggedInPage}) => {
+
+    await loginPage.logout();
+    await expect(loginPage.loginScreen).toBeVisible;
 
 });
 
