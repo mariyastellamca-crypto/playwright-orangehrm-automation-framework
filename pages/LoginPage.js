@@ -3,8 +3,8 @@ export class LoginPage{
     constructor(page){
 
         this.page = page;
-        this.userName = this.page.getByPlaceholder('Username');
-        this.password = this.page.getByPlaceholder('Password');
+        this.userName = this.page.locator('input[name="username"]');
+        this.password = this.page.locator('input[name="password"]');
         this.submit = this.page.getByRole('button' , {name : ' Login '});
         this.invalidCredError = this.page.getByText('Invalid credentials');
         this.blankFieldError = this.page.locator('.oxd-input-field-error-message');
