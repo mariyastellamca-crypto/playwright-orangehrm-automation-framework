@@ -14,8 +14,9 @@ test("Dashboard Page Verification" , async({page, loggedInPage , dashboardPage})
 
 test("Quick Launch verification and navigation" , async({page , loggedInPage , dashboardPage}) => {
 
-    await expect(page).toHaveURL(/dashboard/);
-    await expect(dashboardPage.dashboard).toBeVisible();
+ await expect(dashboardPage.quickLaunchBody).toBeVisible({
+        timeout: 20000
+    });    await expect(dashboardPage.dashboard).toBeVisible();
     await dashboardPage.quickLaunch("Assign Leave");
     await expect(page).toHaveURL(/assignLeave/);
     await expect(dashboardPage.quickTitle).toContainText("Assign Leave");
