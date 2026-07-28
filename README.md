@@ -1,4 +1,5 @@
 # Playwright OrangeHRM Automation Framework
+[![Playwright Tests](https://github.com/mariyastellamca-crypto/playwright-orangehrm-automation-framework/actions/workflows/playwright.yml/badge.svg)](https://github.com/mariyastellamca-crypto/playwright-orangehrm-automation-framework/actions/workflows/playwright.yml)
 
 ## Project Overview
 
