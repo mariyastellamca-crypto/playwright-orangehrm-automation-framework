@@ -9,7 +9,7 @@ export const empData = {
 
     extEmp : {
 
-            empId: '0007',
+            empId: '3456',
             deletionEmpId: '0312'
 
     }

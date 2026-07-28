@@ -4,6 +4,7 @@ import { loginData } from '../test-data/loginData';
 import { LoginPage } from '../pages/LoginPage';
 import { DashboardPage } from '../pages/DashboardPage';
 import { PIMPage } from '../pages/PIMPage';
+import { LeavePage } from '../pages/LeavePage';
 
 export { expect };
 
@@ -23,6 +24,10 @@ export const test = base.extend({
 
     pimPage: async ({ page, dashboardPage }, use) => {
         await use(new PIMPage(page, dashboardPage));
+    },
+
+    leavePage: async ({ page, dashboardPage }, use) => {
+        await use(new LeavePage(page, dashboardPage));
     },
 
     gotoPage: async ({ page }, use) => {

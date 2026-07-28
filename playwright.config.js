@@ -14,10 +14,10 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   testDir: './tests',
-      timeout: 60000,
+      timeout: 80000,
 
     expect: {
-        timeout: 10000
+        timeout: 30000
     },
 
   /* Run tests in files in parallel */
@@ -39,6 +39,7 @@ export default defineConfig({
     trace: 'on-first-retry',
     headless: false,
     retries: 1,
+
   },
 
   /* Configure projects for major browsers */

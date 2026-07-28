@@ -8,6 +8,7 @@ export class DashboardPage{
 
 
         this.userProfile = this.page.locator('.oxd-userdropdown-tab');
+        this.userProfileName = this.page.locator('.oxd-userdropdown-name').textContent();
         this.userProfileIcon = this.page.locator('.oxd-userdropdown-img');
         this.userProfileMenu = this.page.locator('.oxd-dropdown-menu');
 
