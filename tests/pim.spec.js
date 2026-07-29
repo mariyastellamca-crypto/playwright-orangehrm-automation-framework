@@ -40,7 +40,7 @@ test("Verify the Deletion of an Employee", async ({ loggedInPage, pimPage }) => 
     await pimPage.navigateToPim();
     await pimPage.searchEmployee(empData.extEmp.deletionEmpId);
     await expect(pimPage.result.filter({ hasText: empData.extEmp.deletionEmpId })).toBeVisible();
-    await pimPage.deleteEmployee();
+    await pimPage.deleteEmployee(empData.extEmp.deletionEmpId);
     await expect(pimPage.deleteSuccessMsg).toBeVisible();
     await pimPage.searchEmployee(empData.extEmp.deletionEmpId);
     await expect(pimPage.noRecord.first()).toBeVisible();
