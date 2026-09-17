@@ -14,9 +14,7 @@ export class LoginPage{
         this.logoImage = this.page.getByAltText('company-branding');
         this.usernameLabel = this.page.locator('.oxd-label' , {hasText: 'Username'});
         this.passwordLabel = this.page.locator('.oxd-label' , {hasText: 'Password'});
-         
-        //this.passwordLabel = this.page.getByLabel('Password');
-        
+                
     }
 
     async goto(){

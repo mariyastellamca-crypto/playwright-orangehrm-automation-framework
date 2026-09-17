@@ -1,6 +1,7 @@
 import { test , expect } from '../fixtures/baseFixture';
+test.describe.configure({ mode: 'serial' });
 
-test( " Addition of Entitlement" , async({loggedInPage , leavePage}) => {
+test( "Verify adding leave entitlement" , async({loggedInPage , leavePage}) => {
 
 const profileName = await leavePage.userProfileName.textContent();
 
@@ -10,11 +11,11 @@ const profileName = await leavePage.userProfileName.textContent();
 
 })
 
-test("Applying Leave" , async({loggedInPage , leavePage}) => {
+test("Verify employee can apply leave" , async({page,loggedInPage , leavePage}) => {
 
 
     await leavePage.navigateToLeave();
-
-    await leavePage.leaveApply('CAN - Bereavement' ,'2026-28-07' , '2026-28-07' );
+    await page.reload();
+    await leavePage.leaveApply('CAN - Bereavement' ,'2026-29-07' , '2026-29-07' );
     await expect(leavePage.createSuccessMsg).toBeVisible();
 })

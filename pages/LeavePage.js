@@ -11,7 +11,6 @@ export class LeavePage {
         this.entitlement = this.page.getByText('Entitlements ');
         this.addEntitlement = this.page.getByText('Add Entitlements');
         this.empName = this.page.getByPlaceholder('Type for hints...');
-        //this.empNameSelection = this.page.getByText(this.userProfileName.textContent());
         this.leaveType = this.page.getByText('-- Select --').first();
         this.leaveTypeOption = this.page.getByText('CAN - Personal');
         this.entitlementCount = this.page.locator('.oxd-input-field-bottom-space').filter({ hasText: 'Entitlement' }).locator('input');
