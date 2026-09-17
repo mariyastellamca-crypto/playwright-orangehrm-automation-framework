@@ -1,17 +1,8 @@
-# Dependencies
+
+# Playwright
 node_modules/
-
-# Playwright Reports
-playwright-report/
-test-results/
-blob-report/
-
-# Playwright Cache & Authentication
-playwright/.cache/
-playwright/.auth/
-
-# Environment Variables
-.env
-
-# IDE Settings
-.vscode/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/

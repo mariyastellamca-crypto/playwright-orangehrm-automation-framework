@@ -60,14 +60,11 @@ export class PIMPage {
 
     }
 
-    async deleteEmployee(empId) {
+    async deleteEmployee() {
 
-    const row = this.page.locator('.oxd-table-row').filter({ hasText: empId });
-
-    await row.locator('.bi-trash').click();
-
-    await this.confirmDelete.click();
-}
+        await this.delete.click();
+        await this.confirmDelete.click();
+    }
 
 }
 

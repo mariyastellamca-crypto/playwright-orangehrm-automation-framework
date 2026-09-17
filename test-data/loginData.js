@@ -1,8 +1,8 @@
 export const loginData = {
-   validUser: {
-    username: process.env.ORANGEHRM_USERNAME,
-    password: process.env.ORANGEHRM_PASSWORD,
-  },
+    validUser: {
+        username: 'Admin',
+        password: 'admin123'
+    },
 
     invalidUser: {
         username: 'Admin',
