@@ -3,7 +3,7 @@ import { test , expect } from '../fixtures/baseFixture';
 
 test("Dashboard Page Verification" , async({page, loggedInPage , dashboardPage}) => {
 
-    await expect(page).toHaveURL(/dashboard/);
+    await expect(page).toHaveURL(/Dashboard/);
     await expect(dashboardPage.dashboard).toBeVisible();
     await expect(dashboardPage.quickLaunchHeader).toBeVisible();
     await expect(dashboardPage.quickLaunchBody).toBeVisible();
