@@ -3,7 +3,11 @@ import { test , expect } from '../fixtures/baseFixture';
 
 test("Dashboard Page Verification" , async({page, loggedInPage , dashboardPage}) => {
 
+<<<<<<< HEAD
     await expect(page).toHaveURL(/dashboards/);
+=======
+    await expect(page).toHaveURL(/dashboard/);
+>>>>>>> parent of 637f0b6 (Update dashboard.spec.js)
     await expect(dashboardPage.dashboard).toBeVisible();
     await expect(dashboardPage.quickLaunchHeader).toBeVisible();
     await expect(dashboardPage.quickLaunchBody).toBeVisible();
